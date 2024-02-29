@@ -1,0 +1,36 @@
+-- π a, b, c (R)
+
+-- σ a > 2 ∧ a<=4 (R)
+
+-- σ a>2 (R)
+-- ∪
+-- σ a<=5 (R)
+
+-- 1. List the fruits that Winnie likes.
+-- π fruits(σ name='Winnie' (Likes))
+
+-- 2. Who likes apple?
+-- π name(σ fruits='Apple' (Likes))
+
+-- 3. Who likes raspberry or pear? 
+-- π name(σ fruits='raspberry' ∨ fruits='pear' (Likes))
+
+-- OTHER WAY: (WORKS)
+-- π name(σ fruits='raspberry' (Likes))
+-- ∪
+-- π name(σ fruits='pear' (Likes))
+
+-- 4. Who likes both apple and pear?
+-- π name(σ fruits='apple' ∧ fruits='pear' (Likes))
+-- π name(σ fruits='apple' (Likes)) ∩ π name(σ fruits='pear' (Likes))
+
+-- 5. Who likes apple but doesn't like pear? 
+π name (σ fruits='apple' (Likes))
+-
+π name(σ fruits='pear' (Likes))
+
+-- 6. List the fruits that Winnie doesn't like but someone else does.
+-- π fruits(σ name≠'Winnie' (Likes))
+
+-- 7. List those names who doesn't like pear but like something else.
+-- π name(σ fruits≠'pear' (Likes))
