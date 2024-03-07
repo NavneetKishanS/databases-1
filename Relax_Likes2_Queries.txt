@@ -8,4 +8,7 @@
 -- π L1.name(σ L1.name = L2.name ∧ L1.fruits < L2.fruits (ρ L1 (Likes) ⨯ ρ L2 (Likes)))
 
 -- 9.  List the names who like at least three different fruits.
-π L1.name(σ L1.name = L2.name ∧ L1.name = L3.name ∧ L1.fruits < L2.fruits ∧ L2.fruits < L3.fruits ((ρ L1 (Likes) ⨯ ρ L2 (Likes)) ⨯ ρ L3 (Likes)))
+S = π L1.name(σ L1.name = L2.name ∧ L1.name = L3.name ∧ L1.fruits < L2.fruits ∧ L2.fruits < L3.fruits ((ρ L1 (Likes) ⨯ ρ L2 (Likes)) ⨯ ρ L3 (Likes)))
+
+-- 10. List the names who like at most two different fruits.
+π name (Likes) - S
