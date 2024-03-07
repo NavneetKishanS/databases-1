@@ -1,0 +1,5 @@
+-- ρ L (Likes)
+
+-- π animal(ρ name -> animal (Likes))
+
+-- 8.  List the names who like at least two different fruits.
