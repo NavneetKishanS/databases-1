@@ -1,0 +1,28 @@
+-- π fruits(σ name='Winnie'(Likes))
+-- π fruits(σ name='Winnie' (Likes))
+-- π ename (σ sal>2000 ∧ deptno=20 (Emp))
+-- π e1.ename σ e1.mgr = e2.empno and e1.sal > e2.sal (ρ e1 (Emp) x ρ e2 (Emp))
+-- π deptno (Dept) - π deptno (σ job='SALESMAN' (Emp))
+-- π ename (σ sal →γ min(sal) (Emp))
+
+-- π ename(σ loc ≠ 'DALLAS' ∧ loc ≠ 'CHICAGO' (Emp ⟖ {Emp.deptno  Dept.deptno} Dept))
+
+-- π ename (σ sal > 2000 ∧ deptno = 20 (Emp))
+-- π ename σ sal>2000 and deptno=20 (Emp)
+
+-- π ename (Emp) - π ename (σ loc = 'DALLAS' ∨ loc = 'CHICAGO' (Emp ⨝ Dept))
+-- π ename σ loc='DALLAS' or loc='CHICAGO' (Emp ⨝ Dept)
+
+-- π e1.ename σ e1.mgr = e2.empno and e1.sal > e2.sal (ρ e1 (Emp) x ρ e2 (Emp))
+-- π emp1.ename (σ emp1.mgr = e2.empno and emp1.sal > e2.sal (ρ emp1 (Emp) ⨯ ρ e2 (Emp)))
+
+
+-- pi deptno (Dept) - pi deptno (sigma job='SALESMAN' (Emp))
+-- pi deptno (Emp) - pi deptno sigma job='SALESMAN' (Emp natural join Dept)
+
+-- π ename σ sal = min_sal ((γ min(sal) -> min_sal (Emp)) x Emp)
+-- pi ename sigma sal = min_sal (gamma min(sal) -> min_sal (Emp) ⨯ Emp)
+
+
+pi job, max_sal (sigma cnt >= 5 (gamma job; count(*) -> cnt (Emp) x (gamma job; max(sal) -> max_sal (Emp))))
+
